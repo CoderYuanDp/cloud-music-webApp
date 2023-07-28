@@ -2,6 +2,15 @@
 import React from 'react';
 import Slider from '../../components/Slider';
 import RecommendList from '../../components/List';
+import Scroll from '../../baseUI/scroll';
+import styled from'styled-components';
+
+export const Content = styled.div`
+  position: fixed;
+  top: 90px;
+  bottom: 0;
+  width: 100%;
+`
 
 function Recommend() {
   const bannerList = [1,2,3,4].map(item => {
@@ -19,10 +28,16 @@ function Recommend() {
     }
   });
 
-  return (<div>
-    <Slider bannerList={bannerList}></Slider>
-    <RecommendList recommendList={recommendList}></RecommendList> 
-  </div>)
+  return (
+    <Content>
+      <Scroll className='list'>
+        <div>
+          <Slider bannerList={bannerList}></Slider>
+          <RecommendList recommendList={recommendList}></RecommendList> 
+        </div>
+      </Scroll>
+    </Content>
+  )
 }
 
 export default React.memo(Recommend)
