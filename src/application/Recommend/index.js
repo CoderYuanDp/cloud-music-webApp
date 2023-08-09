@@ -9,13 +9,7 @@ import * as actionTypes from './store/actionCreators';
 import { forceCheck } from 'react-lazyload';
 import Loading from '../../baseUI/loading/index';
 import { renderRoutes } from 'react-router-config';
-
-const Content = styled.div`
-  position: fixed;
-  top: 90px;
-  bottom: 0;
-  width: 100%;
-`
+import { Content } from './style';
 
 function Recommend(props) {
   const { bannerList, recommendList, enterLoading } = props;
